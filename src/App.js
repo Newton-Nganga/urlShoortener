@@ -57,8 +57,8 @@ function App() {
           </div>
         </a>
       </nav>
-      <div className=" max-w-3xl m-auto my-4 text-center flex flex-col items-center w-full p-10">
-        <h1 className=" text-5xl sm:text-6xl font-bold">
+      <div className=" max-w-2xl sm:max-w-3xl m-auto my-4 text-center flex flex-col items-center w-full p-10">
+        <h1 className=" text-4xl sm:text-6xl font-bold">
           Shorten Urls,{" "}
           <span className="text-green-600 leading-[6rem] border-2 border-green-600 px-4">
             Generate
@@ -74,7 +74,7 @@ function App() {
             autoFocus
             onChange={(e) => setUrl(e.target.value)}
             value={url}
-            className="w-[70vw] md:rounded-l-full  md:w-[40vw]  p-4 px-5 text-lg text-gray-500 outline-none"
+            className="w-[90vw] md:rounded-l-full  md:w-[40vw]  p-4 px-5 text-lg text-gray-500 outline-none"
           />
           <button
             onClick={(e) => handleShorten(e)}
@@ -84,8 +84,8 @@ function App() {
           </button>
         </div>
       </div>
-      {showModal && (
-        <div className="absolute flex flex-col gap-2 text-gray-400 items-center justify-center top-0 bottom-0 left-0 right-0 z-10 bg-[#222721dc]">
+      {(showModal && url.length>0) && (
+        <div className="absolute flex flex-col gap-2 text-gray-400 items-center justify-center top-0 bottom-0 h-full w-full left-0 right-0 z-10 bg-[#222721dc]">
           <div className="flex flex-col justify-center gap-6 w-[80vw] sm:w-[50vw] max-w-2xl h-[50vw] max-h-xl">
             { showModal && shortUrl.length > 0 ? (
               <Fragment>
